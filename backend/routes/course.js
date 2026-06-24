@@ -1,33 +1,31 @@
 const express = require("express");
 const { teacherAuthMiddleware } = require("../middlewares/teacherAuth");
 
-const app = express();
+const courseRouter = express.Router();
 
-const courseRouter = () => {
-  app.post("/", teacherAuthMiddleware, function (req, res) {
-    res.json();
-  });
+courseRouter.post("/", teacherAuthMiddleware, function (req, res) {
+  res.json({message: "hi there"});
+});
 
-  app.get("/", function (req, res) {
-    res.json();
-  });
+courseRouter.get("/", function (req, res) {
+  res.json();
+});
 
-  app.get("/:courseId", function (req, res) {
-    res.json();
-  });
+courseRouter.get("/:courseId", function (req, res) {
+  res.json();
+});
 
-  app.put("/:courseId", teacherAuthMiddleware, function (req, res) {
-    res.json();
-  });
+courseRouter.put("/:courseId", teacherAuthMiddleware, function (req, res) {
+  res.json();
+});
 
-  app.delete("/:courseId", teacherAuthMiddleware, function (req, res) {
-    res.json();
-  });
+courseRouter.delete("/:courseId", teacherAuthMiddleware, function (req, res) {
+  res.json();
+});
 
-  app.get("/my-courses", teacherAuthMiddleware, function (req, res) {
-    res.json();
-  });
-};
+courseRouter.get("/my-courses", teacherAuthMiddleware, function (req, res) {
+  res.json();
+});
 
 module.exports = {
   courseRouter: courseRouter,

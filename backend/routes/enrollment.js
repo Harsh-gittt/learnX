@@ -1,25 +1,25 @@
 const express = require("express");
 const { studentAuthMiddleware } = require("../middlewares/studentAuth");
 
-const app = express();
+const enrollmentRouter = express.Router();
 
-const enrollmentRouter = () => {
-  app.post("/:courseId", studentAuthMiddleware, function (req, res) {
-    res.json();
-  });
+enrollmentRouter.post("/:courseId", studentAuthMiddleware, function (req, res) {
+  res.json();
+});
 
-  app.get("/my-courses", studentAuthMiddleware, function (req, res) {
-    res.json();
-  });
+enrollmentRouter.get("/my-courses", studentAuthMiddleware, function (req, res) {
+  res.json({ message: "hi there" });
+});
 
-  app.put("/progress/:courseId", studentAuthMiddleware, function (req, res) {
+enrollmentRouter.put("/progress/:courseId", studentAuthMiddleware, function (req, res) {
     res.json();
-  });
+  },
+);
 
-  app.get("/progress/:courseId", studentAuthMiddleware, function (req, res) {
+enrollmentRouter.get("/progress/:courseId", studentAuthMiddleware, function (req, res) {
     res.json();
-  });
-};
+  },
+);
 
 module.exports = {
   enrollmentRouter: enrollmentRouter,

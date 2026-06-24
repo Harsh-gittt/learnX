@@ -2,9 +2,9 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const { z } = require("zod");
 const bcrypt = require("bcrypt");
-const { studentModel } = require("../db");
+const { teacherModel } = require("../db");
 
-const JWT_SECRET = process.env.JWT_SECRET_STUDENT;
+const JWT_SECRET = process.env.JWT_SECRET_TEACHER;
 const teacherRouter = express.Router();
 
 teacherRouter.post("/signup", async function (req, res) {
@@ -27,7 +27,7 @@ teacherRouter.post("/signup", async function (req, res) {
   try {
     const hashedPass = await bcrypt.hash(password, 5);
 
-    await studentModel.create({
+    await teacherModel.create({
       name,
       email,
       password: hashedPass,
@@ -59,17 +59,17 @@ teacherRouter.post("/signin", async function (req, res) {
     });
   }
 
-  const student = await studentModel.findOne({
+  const teacher = await teacherModel.findOne({
     email: email,
   });
 
-  if (student) {
-    const passMatch = await bcrypt.compare(password, student.password);
+  if (teacher) {
+    const passMatch = await bcrypt.compare(password, teacher.password);
 
     if (passMatch) {
       const token = jwt.sign(
         {
-          id: student._id,
+          id: teacher._id,
         },
         JWT_SECRET,
       );
