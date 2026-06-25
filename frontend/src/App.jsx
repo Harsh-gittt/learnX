@@ -6,6 +6,7 @@ import Signup from './components/Signup'
 import StudentDashboard from './components/StudentDashboard'
 import HeroPage from './components/HeroPage';
 import Navbar from './components/Navbar';
+import TeacherDashboard from './components/TeacherDashboard';
 
 
 const App = () => {
@@ -23,6 +24,9 @@ const App = () => {
         <Route path="/" element={<Page1 />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/student" element={<StudentDashboard/>}></Route>           // new
+        <Route path="/teacher" element={<TeacherDashboard/>}></Route>           // new
+    
       </Routes>
 
       {backgroundLocation && (

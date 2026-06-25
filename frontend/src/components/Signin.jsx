@@ -18,14 +18,15 @@ const Signin = () => {
         setRole("teacher")
     }
 
-    const submitHandler = (e) => {
-        e.preventDefault()
-        console.log(role)
-        console.log(username)
-        console.log(email)
-        console.log(password)
-        console.log(picUrl)
-    }
+    // const submitHandler = (e) => {
+    //     e.preventDefault()
+    //     console.log(role)
+    //     console.log(username)
+    //     console.log(email)
+    //     console.log(password)
+    //     console.log(picUrl)
+        
+    // }
 
     return (
         <div className="fixed inset-0 z-50 flex justify-center items-center bg-black/40 backdrop-blur-sm">
@@ -50,8 +51,14 @@ const Signin = () => {
                 }}
                     type="password" placeholder='Password :' className='border-3  border-gray-400 font-bold rounded-xl w-full h-12 px-5' />
 
-                <button onClick={submitHandler}
+                {/* <Link to='/student'>
+                <button  
                     className='h-12 w-full bg-blue-500 text-2xl text-white font-bold rounded-2xl'>Sign In</button>
+                </Link> */}
+                <Link to='/teacher'>
+                <button  
+                    className='h-12 w-full bg-blue-500 text-2xl text-white font-bold rounded-2xl'>Sign In</button>
+                </Link>
                 <div className='flex justify-center'>
                     <h6 className='text-gray-500'>New User? <Link to='/signup' className='text-blue-500' state={{ backgroundLocation }}>SignUp</Link></h6>
 

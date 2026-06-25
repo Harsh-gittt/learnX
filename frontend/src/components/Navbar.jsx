@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav className='flex justify-between items-center px-30 py-4 bg-white border-b border-gray-100 shadow-sm'>
       <div className='flex items-center gap-2.5'>
         
-        <h1 className='font-bold text-xl text-gray-900 tracking-tight'>LearnX</h1>
+        <h1 className='font-bold text-4xl text-gray-900 tracking-tight '>LearnX</h1>
       </div>
 
       <div className='flex items-center gap-4'>
