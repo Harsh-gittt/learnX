@@ -1,6 +1,6 @@
 const express = require("express");
 const { teacherAuthMiddleware } = require("../middlewares/teacherAuth");
-const { courseModel } = require("../db");
+const { courseModel, lessonModel } = require("../db");
 
 const courseRouter = express.Router();
 
@@ -104,6 +104,10 @@ courseRouter.delete(
       _id: courseId,
     });
 
+    await lessonModel.deleteMany({
+      courseId: courseId,
+    });
+
     if (deleted) {
       res.json({
         message: "course deleted successfully!",
@@ -132,6 +136,19 @@ courseRouter.get(
     });
   },
 );
+
+courseRouter.get("/lessons/:courseId", async function (req, res) {
+  const courseId = req.params.courseId;
+
+  const lessons = await lessonModel.find({
+    courseId: courseId,
+  });
+
+  res.json({
+    message: "these are the lessons for this course!",
+    lessons: lessons,
+  });
+});
 
 module.exports = {
   courseRouter: courseRouter,
