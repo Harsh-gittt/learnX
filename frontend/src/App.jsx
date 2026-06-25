@@ -7,6 +7,17 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Page1 />} />
     </Routes>
+import Signin from './components/Signin'
+import Signup from './components/Signup'
+import StudentDashboard from './components/StudentDashboard'
+
+
+const App = () => {
+  return (
+    <div className=' bg-gray-700'>
+     <StudentDashboard />
+    
+    </div>
   )
 }
 
