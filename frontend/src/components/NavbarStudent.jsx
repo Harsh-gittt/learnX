@@ -1,19 +1,31 @@
-import React from 'react'
+import { Link, useLocation } from 'react-router-dom';
 
-const NavbarStudent = () => {
+
+const Navbar = () => {
+
+  const location = useLocation()
+
   return (
-    <div className=' bg-black text-white flex justify-between py-2 px-6 rounded-b-md '>
-      <h1 className='text-3xl font-bold'>LearnX</h1>
-      <div className='flex gap-4'>
-        <div className='flex flex-col gap-0.5 font-medium   '>
-        <h1>UserName</h1>
-        <h1>sample@gmail.com</h1>
+    <nav className='flex justify-between items-center px-30 py-4 bg-white border-b border-gray-100 shadow-sm'>
+      <div className='flex items-center gap-2.5'>
+        
+        <h1 className='font-bold text-4xl text-gray-900 tracking-tight'>LearnX</h1>
       </div>
-      <img className='h-12 w-12 rounded-full object-cover' src="https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D" alt="profile pic" />
+
+      <div className='flex items-center gap-4'>
+        <a className='text-gray-500 hover:text-gray-900 font-medium text-sm transition-colors duration-200' href="#">Home</a>
+        <a className='text-gray-500 hover:text-gray-900 font-medium text-sm transition-colors duration-200' href="#">Explore courses</a>
+        <a className='text-gray-500 hover:text-gray-900 font-medium text-sm transition-colors duration-200' href="#">About</a>
+        <a className='text-gray-500 hover:text-gray-900 font-medium text-sm transition-colors duration-200' href="#">Contact</a>
+        
+        <Link to="/signup" state={{ backgroundLocation: location }}>
+          <button className='bg-gray-900 text-white text-sm font-semibold rounded-xl px-5 py-2.5 cursor-pointer transition-all duration-300 hover:bg-blue-600 hover:shadow-lg active:scale-95' >
+            Sign Out
+          </button>
+        </Link>
       </div>
-      
-    </div>
+    </nav>
   )
 }
 
-export default NavbarStudent
+export default Navbar
