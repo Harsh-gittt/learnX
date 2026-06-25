@@ -15,7 +15,7 @@ const Navbar = () => {
         <a className='text-gray-500 hover:text-gray-900 font-medium text-sm transition-colors duration-200' href="#">About</a>
         <a className='text-gray-500 hover:text-gray-900 font-medium text-sm transition-colors duration-200' href="#">Contact</a>
         <Link to="/signup">
-          <button className='bg-gray-900 text-white text-sm font-semibold rounded-xl px-5 py-2.5 transition-all duration-300 hover:bg-blue-600 hover:shadow-lg active:scale-95' >
+          <button className='bg-gray-900 text-white text-sm font-semibold rounded-xl px-5 py-2.5 cursor-pointer transition-all duration-300 hover:bg-blue-600 hover:shadow-lg active:scale-95' >
             Get Started
           </button>
         </Link>
