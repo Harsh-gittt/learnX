@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Signup = () => {
 
@@ -60,7 +61,8 @@ const Signup = () => {
       className='h-12 w-full bg-blue-500 text-2xl text-white font-bold rounded-2xl'>Sign Up</button>
 
        <div className='flex justify-center '>
-            <h6 className='text-gray-500 '>Already have an account? SignIn</h6>
+            <h6 className='text-gray-500 '>Already have an account? <Link to='/signin' className='text-blue-500'>SignIn</Link></h6>
+            
             
         </div>
      </form>

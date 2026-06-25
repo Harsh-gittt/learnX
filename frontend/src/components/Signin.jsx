@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Signin = () => {
 
@@ -38,7 +39,7 @@ const Signin = () => {
      <button onClick={submitHandler}
       className='h-12 w-full bg-blue-500 text-2xl text-white font-bold rounded-2xl'>Sign In</button>
         <div className='flex justify-center'>
-            <h6 className='text-gray-500'>New User? SignUp</h6>
+            <h6 className='text-gray-500'>New User? <Link to ='/signup' className='text-blue-500'>SignUp</Link></h6>
             
         </div>
      </form>
